@@ -9,26 +9,24 @@ int main(int argc, char**argv)
 	return (1);
 	}
 
-	// Datei oeffnen
-	std::ifstream file;
-	file.open(argv[1]);
-	if (!file.is_open()) {
-    std::cerr << "Fehler beim Öffnen der Datei\n";
+	if (std::string(argv[2]).empty()) {
+	std::cerr << "s1 must not be empty\n";
 	return (1);
 	}
 
-	// Dateiinhalt einlesen
-	// std::string content;
-	// std::string line;
+	// open the input file
+	std::ifstream file;
+	file.open(argv[1]);
+	if (!file.is_open()) {
+    std::cerr << "could not open file\n";
+	return (1);
+	}
 
-	// while (std::getline(file, line)) {
-	// 	content += line + '\n';  // Zeilen zusammenfügen
-	// }
-	std::string content((std::istreambuf_iterator<char>(file)),
-                    std::istreambuf_iterator<char>());
+	// read the whole file content
+	std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 	file.close();
 
-	// s1 durch s2 ersetzen
+	// replace every occurrence of s1 with s2
 	std::string result;
 	size_t pos = 0;
 	size_t found = content.find(argv[2], pos);
@@ -40,11 +38,11 @@ int main(int argc, char**argv)
 	}
 	result += content.substr(pos);
 
-	// Ergebnis in neue Datei schreiben
+	// write the result into the new file
 	std::string newFilename = std::string(argv[1]) + ".replace";
-	std::ofstream outFile(newFilename);
+	std::ofstream outFile(newFilename.c_str());
 	if (!outFile.is_open()) {
-    std::cerr << "Fehler: Neue Datei konnte nicht erstellt werden\n";
+    std::cerr << "could not create output file\n";
     return 1;
 	}
 	outFile << result;

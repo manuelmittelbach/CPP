@@ -2,9 +2,8 @@
 #include <iostream>
 
 HumanB::HumanB(std::string name) 
-    : name(name)
+    : name(name), weapon(NULL)
 {
-    // weapon parameter is ignored on purpose
 }
 
 void HumanB::attack()
@@ -17,5 +16,5 @@ void HumanB::attack()
 
 void HumanB::setWeapon(Weapon& weapon)
 {
-    this->weapon = &weapon;  // intern als pointer speichern
+    this->weapon = &weapon;
 }

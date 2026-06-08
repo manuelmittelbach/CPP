@@ -12,7 +12,7 @@ private:
 public:
 	void attack();
 	HumanB(std::string name);
-	void setWeapon(Weapon& weapon);//or void setWeapon(Weapon* weapon);
+	void setWeapon(Weapon& weapon);
 };
 
 #endif
