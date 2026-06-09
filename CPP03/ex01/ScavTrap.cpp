@@ -1,13 +1,22 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	HitPoints = 100;
     EnergyPoints = 50;
     AttackDamage = 20;
 
 	std::cout << "ScavTrap default constructor called for " << Name << std::endl;
+}
+
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+{
+	HitPoints = 100;
+    EnergyPoints = 50;
+    AttackDamage = 20;
+
+	std::cout << "ScavTrap constructor called for " << Name << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
@@ -18,8 +27,9 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
     if (this == &other) // self-assignment check
+    {
         return *this;
-
+    }
 	ClapTrap::operator=(other);
 
 	std::cout << "ScavTrap copy assignment operator called for " << Name << std::endl;
@@ -33,7 +43,7 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << Name << "is now in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << Name << " is now in Gate keeper mode" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

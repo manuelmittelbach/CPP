@@ -11,6 +11,7 @@ protected:
 	int	EnergyPoints;
 	int	AttackDamage;
 public:
+	ClapTrap();
 	ClapTrap(const std::string& Name);
 	ClapTrap(const ClapTrap& other);
 	ClapTrap& operator=(const ClapTrap& other);

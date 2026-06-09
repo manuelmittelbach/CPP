@@ -1,13 +1,22 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
+FragTrap::FragTrap() : ClapTrap()
 {
 	HitPoints = 100;
     EnergyPoints = 100;
     AttackDamage = 30;
 
 	std::cout << "FragTrap default constructor called for " << Name << std::endl;
+}
+
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name)
+{
+	HitPoints = 100;
+    EnergyPoints = 100;
+    AttackDamage = 30;
+
+	std::cout << "FragTrap constructor called for " << Name << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
@@ -18,7 +27,9 @@ FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)
 FragTrap& FragTrap::operator=(const FragTrap& other)
 {
     if (this == &other) // self-assignment check
+    {
         return *this;
+    }
 
 	ClapTrap::operator=(other);
 

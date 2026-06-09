@@ -10,6 +10,7 @@ int main()
     std::cout << "\n--- Creating ScavTraps ---" << std::endl;
     ScavTrap guardian("Guardian");
     ScavTrap sentinel("Sentinel");
+    ScavTrap angelico;
 
     std::cout << "\n--- Testing attack ---" << std::endl;
     alpha.attack("TargetDummy");
