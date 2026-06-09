@@ -26,6 +26,7 @@ int main(int argc, char**argv)
 	std::string content((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 	file.close();
 
+
 	// replace every occurrence of s1 with s2
 	std::string result;
 	size_t pos = 0;
