@@ -1,0 +1,10 @@
+# Build artifacts
+*.o
+*.d
+*.out
+
+# macOS
+.DS_Store
+
+# Compiled binaries (exercise executables have no extension)
+Abstract_Class
