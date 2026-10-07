@@ -15,8 +15,10 @@ of small exercises built around one core concept.
 | **CPP02** | Ad-hoc polymorphism, operator overloading, Orthodox Canonical Form, fixed-point arithmetic |
 | **CPP03** | Inheritance, constructor/destructor chaining, access specifiers |
 | **CPP04** | Subtype polymorphism, abstract classes, interfaces, deep copies, virtual destructors |
+| **CPP05** | Exceptions (`try` / `catch` / `throw`), custom exception classes, nested classes |
+| **CPP06** | C++ casts (`static_cast`, `dynamic_cast`, `reinterpret_cast`), scalar conversions, serialization, type identification |
 
-CPP05 and beyond (exceptions, casts, templates, STL containers & algorithms)
+CPP07 and beyond (templates, STL containers & algorithms)
 are in progress and will be added as they are completed.
 
 ## Build
