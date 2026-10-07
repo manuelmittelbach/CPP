@@ -119,6 +119,11 @@ Fixed Fixed::operator/(const Fixed& other) const
 {
     Fixed result;
 
+    if (other.fixedPointNumberValue == 0)
+    {
+        std::cerr << "Error: division by zero" << std::endl;
+        return result;
+    }
     // 1. Hochskalieren, um die Fixed-Point Präzision zu behalten
     long long tmp = ((long long)this->fixedPointNumberValue << fractionalBits) / other.fixedPointNumberValue;
 
