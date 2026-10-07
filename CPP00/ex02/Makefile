@@ -3,6 +3,10 @@ NAME        = The_Job_Of_Your_Dreams
 CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98 -MMD -MP
 
+ifdef COLOR
+CXXFLAGS   += -DCOLOR
+endif
+
 SRC         = Account.cpp tests.cpp
 
 OBJ         = $(SRC:.cpp=.o)

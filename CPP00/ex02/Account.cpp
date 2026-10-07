@@ -4,8 +4,13 @@
 #include <ctime>
 #include <iomanip>  
 
-#define BLUE  "\033[34m"
-#define RESET "\033[0m"
+#ifdef COLOR
+# define BLUE  "\033[34m"
+# define RESET "\033[0m"
+#else
+# define BLUE  ""
+# define RESET ""
+#endif
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -112,7 +117,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 
 void Account::_displayTimestamp(void)
 {
-    std::time_t t = std::time(nullptr);
+    std::time_t t = std::time(NULL);
     std::tm* now = std::localtime(&t);
 
     std::cout << "["
