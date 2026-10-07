@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 
 int main(int argc, char **argv)
 {
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
             j = 0;
             while (argv[i][j])
             {
-                std::cout << argv[i][j];
+                std::cout << static_cast<char>(std::toupper(static_cast<unsigned char>(argv[i][j])));
                 j++;
             }
             i++;
